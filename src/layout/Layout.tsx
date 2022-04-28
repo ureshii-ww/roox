@@ -1,9 +1,10 @@
 import React from 'react';
+import AppRouter from '../routes/AppRouter';
 
 const Layout = () => {
   return (
     <div>
-      Hello world
+      <AppRouter />
     </div>
   );
 };

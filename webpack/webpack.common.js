@@ -14,7 +14,8 @@ const commonConfig = {
   output: {
     path: path.resolve(__dirname, '..', './build'),
     filename: '[name].[contenthash].js',
-    chunkFilename: '[id].[chunkhash].js'
+    chunkFilename: '[id].[chunkhash].js',
+    publicPath: '/',
   },
   module: {
     rules: [

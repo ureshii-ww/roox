@@ -1,12 +1,15 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import Layout from './Layout/Layout';
+import Layout from './layout/Layout';
 import { Provider } from 'react-redux';
 import store from './store';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Layout />
-  </Provider>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <Layout />
+    </Provider>
+  </BrowserRouter>,
   document.getElementById('root')
 );

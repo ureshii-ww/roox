@@ -14,22 +14,17 @@ const devConfig = {
         errors: true,
       },
     },
+    historyApiFallback: true,
   },
   module: {
     rules: [
       {
         test: /\.(s*)css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
-  plugins: [
-    new ReactRefreshPlugin(),
-  ],
-}
+  plugins: [new ReactRefreshPlugin()],
+};
 
 export default devConfig;
