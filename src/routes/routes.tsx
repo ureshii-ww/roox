@@ -14,8 +14,8 @@ const routes: RouteObject[] = [
     element: <ProfilePage />,
   },
   {
-    path: `/profile`,
-    element: <Navigate to="/profile/1" />,
+    path: RouteNames.ProfileBase,
+    element: <Navigate to={`${RouteNames.ProfileBase}/1`} />,
   },
   {
     path: '*',
