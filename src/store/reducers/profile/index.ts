@@ -19,10 +19,12 @@ const profileSlice = createSlice({
       })
       .addCase(loadProfile.fulfilled, (state, { payload }) => {
         state.data = payload;
+        state.error = null;
         state.isLoading = false;
       })
       .addCase(loadProfile.rejected, (state, { payload }) => {
         state.error = payload!;
+        state.data = null;
         state.isLoading = false;
       });
   },
