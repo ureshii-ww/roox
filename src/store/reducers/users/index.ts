@@ -15,6 +15,9 @@ const usersSlice = createSlice({
     setSortingType: (state, { payload }: PayloadAction<UsersSortingTypes>) => {
       state.sortingTypes = payload;
     },
+    resetUsersState: () => {
+      return initialState;
+    }
   },
   extraReducers: builder => {
     builder
@@ -31,5 +34,5 @@ const usersSlice = createSlice({
   },
 });
 
-export const { setSortingType } = usersSlice.actions;
+export const { setSortingType, resetUsersState } = usersSlice.actions;
 export default usersSlice.reducer;
