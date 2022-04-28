@@ -1,9 +1,9 @@
 import React, { ButtonHTMLAttributes, FC } from 'react';
 import './main-button.scss';
 
-interface MainButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
-const MainButton: FC<MainButtonProps> = ({ className, children, ...props }) => {
+const Button: FC<ButtonProps> = ({ className, children, ...props }) => {
   const baseClass = 'main-button';
   const classString = className ? `${className} ${baseClass}` : baseClass;
   
@@ -14,4 +14,4 @@ const MainButton: FC<MainButtonProps> = ({ className, children, ...props }) => {
   );
 };
 
-export default MainButton;
+export default Button;
