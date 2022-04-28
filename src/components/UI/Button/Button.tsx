@@ -1,7 +1,6 @@
 import React, { ButtonHTMLAttributes, FC } from 'react';
-import './main-button.scss';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
 
 const Button: FC<ButtonProps> = ({ className, children, ...props }) => {
   const baseClass = 'main-button';
