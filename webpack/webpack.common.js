@@ -2,6 +2,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ESLintWebpackPlugin from 'eslint-webpack-plugin';
+import TsCheckerPlugin from 'fork-ts-checker-webpack-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,7 +27,7 @@ const commonConfig = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-react'],
+              presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
             },
           },
         ],
@@ -47,8 +48,11 @@ const commonConfig = {
     }),
     new ESLintWebpackPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
-    })
+    }),
+    new TsCheckerPlugin({
+      async: false,
+    }),
   ],
-}
+};
 
 export default commonConfig;
