@@ -1,6 +1,6 @@
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import 'dotenv/config';
-import autoprefixer from 'autoprefixer';
+import postcssRules from './postcss-rules.js';
 
 const devConfig = {
   mode: 'development',
@@ -24,14 +24,7 @@ const devConfig = {
         use: [
           'style-loader',
           'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: ['postcss-preset-env', autoprefixer()],
-              },
-            },
-          },
+          postcssRules,
           'sass-loader',
         ],
       },

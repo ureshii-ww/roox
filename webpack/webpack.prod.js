@@ -2,7 +2,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import autoprefixer from 'autoprefixer';
+import postcssRules from './postcss-rules.js';
 
 const prodConfig = {
   mode: 'production',
@@ -14,14 +14,7 @@ const prodConfig = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: ['postcss-preset-env', autoprefixer()]
-              },
-            },
-          },
+          postcssRules,
           'sass-loader',
         ],
       },
