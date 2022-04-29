@@ -10,5 +10,6 @@ const InputTextarea = forwardRef<HTMLTextAreaElement, InputProps>(
     return <textarea {...props} ref={ref} className={classString} />;
   }
 );
+InputTextarea.displayName = 'InputTextarea';
 
 export default InputTextarea;

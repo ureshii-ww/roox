@@ -11,14 +11,14 @@ const InputBlock: FC<InputBlockProps> = ({ label, name, className, children }) =
   const classString = className ? `${baseClass} ${className}` : baseClass;
 
   return (
-    <fieldset className={classString}>
+    <div className={classString}>
       <label className="input-block__label" htmlFor={name}>
         {label}
       </label>
       <div className="input-block__input-wrapper">
         <div className="input-block__input">{children}</div>
       </div>
-    </fieldset>
+    </div>
   );
 };
 export default InputBlock;

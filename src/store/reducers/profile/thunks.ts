@@ -11,7 +11,7 @@ export const loadProfile = createAsyncThunk<UserModel, GetProfileDto, { rejectVa
       const response = await UsersService.getProfile(getProfileDto);
       return response.data;
     } catch (error) {
-      if (axios.isAxiosError(error) && error.status === '404') {
+      if (axios.isAxiosError(error) && error.response?.status === 404) {
         return rejectWithValue('Пользователь не найден');
       }
       return rejectWithValue('Произошла ошибка при загрузке');
