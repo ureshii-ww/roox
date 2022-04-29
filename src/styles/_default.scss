@@ -1,0 +1,19 @@
+@use 'placeholders/text-size';
+@use 'placeholders/text-weight';
+@use 'variables/color';
+
+body {
+  font-family: Roboto, sans-serif;
+  background-color: color.$bg-body;
+  @extend %text-base;
+  @extend %weight-rg;
+}
+
+a {
+  color: color.$tc-accent;
+  text-decoration: none;
+
+  &:visited {
+    color: color.$tc-accent;
+  }
+}
