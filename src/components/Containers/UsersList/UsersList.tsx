@@ -2,12 +2,13 @@ import React from 'react';
 import { useUsersList } from './useUsersList';
 import UserCard from '../../UI/UserCard/UserCard';
 import './users-list.scss';
+import Loader from '../../UI/Loader/Loader';
 
 const UsersList = () => {
   const { usersList, isLoading } = useUsersList();
 
   return isLoading ? (
-    <div>Loading...</div>
+    <Loader />
   ) : (
     <>
       {usersList && usersList.length > 0 ? (

@@ -1,6 +1,8 @@
 @use 'src/styles/placeholders/page-title';
 
 .users-page {
+  height: 100%;
+
   &__title {
     @extend %page-title;
   }
