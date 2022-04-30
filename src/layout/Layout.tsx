@@ -8,9 +8,9 @@ const Layout = () => {
     <div className="app-layout">
       <div className="app-layout__content">
         <Sidebar />
-        <div className="app-layout__page">
+        <main className="app-layout__page">
           <AppRouter />
-        </div>
+        </main>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ const Sidebar = () => {
   const { handleSortByName, handleSortByCity, isSortedByCity, isSortedByName } = useSidebar();
 
   return (
-    <div className="sidebar">
+    <aside className="sidebar">
       <div className="sidebar__controls">
         <h2 className="sidebar__title">Сортировка</h2>
         <Button className="sidebar__button" onClick={handleSortByCity} disabled={isSortedByCity}>
@@ -17,7 +17,7 @@ const Sidebar = () => {
           По имени
         </Button>
       </div>
-    </div>
+    </aside>
   );
 };
 
