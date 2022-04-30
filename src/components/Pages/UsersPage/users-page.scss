@@ -1,0 +1,7 @@
+@use 'src/styles/placeholders/page-title';
+
+.users-page {
+  &__title {
+    @extend %page-title;
+  }
+}

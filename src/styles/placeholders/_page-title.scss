@@ -1,0 +1,9 @@
+@use 'src/styles/placeholders/text-size';
+@use 'src/styles/placeholders/text-weight';
+@use 'src/styles/variables/measuring';
+
+%page-title {
+  @extend %text-xl;
+  @extend %weight-bd;
+  margin-bottom: measuring.$m-20;
+}
