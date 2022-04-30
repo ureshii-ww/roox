@@ -1,0 +1,21 @@
+@use 'src/styles/variables/color';
+@use 'src/styles/variables/measuring';
+@use 'src/styles/placeholders/text-weight';
+@use 'src/styles/placeholders/text-size';
+
+$margin: measuring.$m-12;
+
+.sidebar {
+  background-color: color.$bg-sidebar;
+  padding: measuring.$m-45 measuring.$m-26;
+
+  &__title {
+    margin-bottom: $margin;
+    @extend %text-base;
+    @extend %weight-rg;
+  }
+
+  &__button {
+    margin-bottom: $margin;
+  }
+}
