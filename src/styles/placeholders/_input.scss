@@ -1,0 +1,19 @@
+@use 'src/styles/variables/color';
+@use 'src/styles/variables/measuring';
+
+%input {
+  display: block;
+  padding: measuring.$m-10 measuring.$m-14;
+  border: 1px solid color.$bd-input;
+  border-radius: 8px;
+  box-shadow: none;
+  outline: none;
+
+  &::placeholder {
+    color: color.$tc-disabled;
+  }
+
+  &--red {
+    border-color: color.$bd-error;
+  }
+}
