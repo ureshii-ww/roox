@@ -1,0 +1,38 @@
+@use 'src/styles/variables/color';
+@use 'src/styles/variables/measuring';
+@use 'src/styles/placeholders/page-title';
+
+.profile-form {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: measuring.$m-14;
+
+    h1 {
+      @extend %page-title;
+      margin-bottom: 0;
+    }
+  }
+
+  &__fieldset {
+    border: 1px solid color.$bd-fieldset;
+    border-radius: 8px;
+    padding: measuring.$m-26 measuring.$m-14;
+    margin-bottom: measuring.$m-14;
+
+    input {
+      width: 50%;
+    }
+
+    textarea {
+      width: 100%;
+      height: 80px;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

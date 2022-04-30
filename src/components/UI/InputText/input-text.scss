@@ -2,4 +2,8 @@
 
 .input-text {
   @extend %input;
+
+  &--red {
+    @extend %input--red;
+  }
 }

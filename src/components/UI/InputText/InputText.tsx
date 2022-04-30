@@ -1,19 +1,12 @@
 import React, { forwardRef, InputHTMLAttributes } from 'react';
 import './input-text.scss';
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  mode?: 'red';
-}
+export type InputProps = InputHTMLAttributes<HTMLInputElement>;
 
-const InputText = forwardRef<HTMLInputElement, InputProps>(({ className, mode, ...props }, ref) => {
+const InputText = forwardRef<HTMLInputElement, InputProps>(({ className, ...props }, ref) => {
   const baseClass = 'input-text';
-  const classString =
-    className && mode
-      ? `${className} ${baseClass} ${baseClass}--${mode}`
-      : className
-        ? `${className} ${baseClass}`
-        : baseClass;
-  
+  const classString = className ? `${className} ${baseClass}` : baseClass;
+
   return <input {...props} ref={ref} className={classString} />;
 });
 InputText.displayName = 'InputText';

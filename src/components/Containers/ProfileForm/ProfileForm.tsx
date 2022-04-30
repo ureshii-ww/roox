@@ -5,13 +5,14 @@ import InputBlock from '../../UI/InputBlock/InputBlock';
 import InputText from '../../UI/InputText/InputText';
 import InputTextarea from '../../UI/InputTextarea/InputTextarea';
 import Button from '../../UI/Button/Button';
+import './profile-form.scss';
 
 interface ProfileFormProps {
   user: UserModel;
 }
 
 const ProfileForm: FC<ProfileFormProps> = ({ user }) => {
-  const { useFormProps, onSubmit, toggleIsEditable, isEditable } = useProfileForm();
+  const { useFormProps, onSubmit, toggleIsEditable, isEditable } = useProfileForm(user);
   const {
     register,
     formState: { errors },
@@ -19,19 +20,20 @@ const ProfileForm: FC<ProfileFormProps> = ({ user }) => {
   } = useFormProps;
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
+    <form className="profile-form" onSubmit={handleSubmit(onSubmit)}>
+      <header className="profile-form__header">
         <h1>Профиль пользователя</h1>
         <Button type="button" onClick={toggleIsEditable}>
           Редактировать
         </Button>
-      </div>
-      <fieldset>
+      </header>
+      <fieldset className="profile-form__fieldset">
         <InputBlock label="Name" name="name">
           <InputText
             defaultValue={user.name}
             {...register('name', { required: true })}
             disabled={!isEditable}
+            className={errors.name && 'input-text--red'}
           />
         </InputBlock>
         <InputBlock label="Username" name="username">
@@ -39,6 +41,7 @@ const ProfileForm: FC<ProfileFormProps> = ({ user }) => {
             defaultValue={user.username}
             {...register('username', { required: true })}
             disabled={!isEditable}
+            className={errors.username && 'input-text--red'}
           />
         </InputBlock>
         <InputBlock label="Email" name="email">
@@ -47,6 +50,7 @@ const ProfileForm: FC<ProfileFormProps> = ({ user }) => {
             type="email"
             {...register('email', { required: true })}
             disabled={!isEditable}
+            className={errors.email && 'input-text--red'}
           />
         </InputBlock>
         <InputBlock label="Street" name="street">
@@ -54,6 +58,7 @@ const ProfileForm: FC<ProfileFormProps> = ({ user }) => {
             defaultValue={user.address.street}
             {...register('street', { required: true })}
             disabled={!isEditable}
+            className={errors.street && 'input-text--red'}
           />
         </InputBlock>
         <InputBlock label="City" name="city">
@@ -61,6 +66,7 @@ const ProfileForm: FC<ProfileFormProps> = ({ user }) => {
             defaultValue={user.address.city}
             {...register('city', { required: true })}
             disabled={!isEditable}
+            className={errors.city && 'input-text--red'}
           />
         </InputBlock>
         <InputBlock label="Zipcode" name="zipcode">
@@ -68,6 +74,7 @@ const ProfileForm: FC<ProfileFormProps> = ({ user }) => {
             defaultValue={user.address.zipcode}
             {...register('zipcode', { required: true })}
             disabled={!isEditable}
+            className={errors.zipcode && 'input-text--red'}
           />
         </InputBlock>
         <InputBlock label="Phone" name="phone">
@@ -75,6 +82,7 @@ const ProfileForm: FC<ProfileFormProps> = ({ user }) => {
             defaultValue={user.phone}
             {...register('phone', { required: true })}
             disabled={!isEditable}
+            className={errors.phone && 'input-text--red'}
           />
         </InputBlock>
         <InputBlock label="Website" name="website">
@@ -82,14 +90,17 @@ const ProfileForm: FC<ProfileFormProps> = ({ user }) => {
             defaultValue={user.website}
             {...register('website', { required: true })}
             disabled={!isEditable}
+            className={errors.website && 'input-text--red'}
           />
         </InputBlock>
-        <InputBlock label="comment" name="comment">
+        <InputBlock label="Comment" name="comment">
           <InputTextarea {...register('comment')} disabled={!isEditable} />
         </InputBlock>
       </fieldset>
-      <div>
-        <Button disabled={!isEditable}>Отправить</Button>
+      <div className="profile-form__controls">
+        <Button className="main-button--green" disabled={!isEditable}>
+          Отправить
+        </Button>
       </div>
     </form>
   );
