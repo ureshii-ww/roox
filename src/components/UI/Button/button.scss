@@ -1,0 +1,22 @@
+@use 'src/styles/variables/color';
+@use 'src/styles/variables/measuring';
+
+
+.main-button {
+  display: block;
+  padding: measuring.$m-10 measuring.$m-18;
+  background-color: color.$bg-button;
+  color: color.$tc-button;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+
+  &--green {
+    background-color: color.$bg-button-green;
+  }
+
+  &:disabled {
+    cursor: default;
+    background-color: color.$bg-button-disabled
+  }
+}
