@@ -1,0 +1,20 @@
+@use 'src/styles/variables/sizes';
+@use 'src/styles/variables/color';
+@use 'src/styles/variables/measuring';
+
+.app-layout {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+
+  &__content {
+    display: grid;
+    grid-template-columns: sizes.$sidebar-width 1fr;
+  }
+
+  &__page {
+    background-color: color.$bg-page;
+    width: min(860px, calc(80vw - #{sizes.$sidebar-width}));
+    padding: measuring.$m-24 measuring.$m-42;
+  }
+}
