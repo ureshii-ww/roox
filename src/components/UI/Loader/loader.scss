@@ -1,0 +1,23 @@
+@use 'src/styles/variables/measuring';
+
+.loader {
+  height: calc(100% - #{measuring.$m-28});
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: measuring.$m-36;
+    height: measuring.$m-36;
+    animation: spinner 1.1s infinite linear;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
