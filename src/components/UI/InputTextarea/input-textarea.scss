@@ -1,0 +1,6 @@
+@use 'src/styles/placeholders/input';
+
+.input-textarea {
+  @extend %input;
+  resize: none;
+}

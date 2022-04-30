@@ -9,6 +9,10 @@
   box-shadow: none;
   outline: none;
 
+  &:disabled {
+    background-color: color.$bg-page;
+  }
+
   &::placeholder {
     color: color.$tc-disabled;
   }

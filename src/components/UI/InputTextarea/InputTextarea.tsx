@@ -1,4 +1,5 @@
 import React, { forwardRef, TextareaHTMLAttributes } from 'react';
+import './input-textarea.scss';
 
 type InputProps = TextareaHTMLAttributes<HTMLTextAreaElement>;
 
