@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import './input-block.scss';
 
 interface InputBlockProps {
   label: string;

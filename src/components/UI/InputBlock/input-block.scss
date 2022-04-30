@@ -1,0 +1,13 @@
+@use 'src/styles/placeholders/text-size';
+@use 'src/styles/variables/measuring';
+
+.input-block {
+
+  &:not(:last-child) {
+    margin-bottom: measuring.$m-14;
+  }
+
+  &__label {
+    @extend %text-xs;
+  }
+}
