@@ -1,6 +1,7 @@
 import React from 'react';
 import { useUsersList } from './useUsersList';
 import UserCard from '../../UI/UserCard/UserCard';
+import './users-list.scss';
 
 const UsersList = () => {
   const { usersList, isLoading } = useUsersList();
@@ -8,9 +9,9 @@ const UsersList = () => {
   return isLoading ? (
     <div>Loading...</div>
   ) : (
-    <div>
+    <>
       {usersList && usersList.length > 0 ? (
-        <div>
+        <ul className="users-list">
           {usersList.map(user => (
             <UserCard
               key={user.id}
@@ -20,11 +21,11 @@ const UsersList = () => {
               id={user.id}
             />
           ))}
-        </div>
+        </ul>
       ) : (
         <div>No users</div>
       )}
-    </div>
+    </>
   );
 };
 
