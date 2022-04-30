@@ -1,0 +1,34 @@
+@use 'src/styles/variables/measuring';
+@use 'src/styles/variables/color';
+@use 'src/styles/placeholders/text-size';
+
+.user-card {
+  display: flex;
+  justify-content: space-between;
+  padding: measuring.$m-16;
+  background-color: color.$bg-user-card;
+  border-radius: 12px;
+
+  &:not(:last-child) {
+    margin-bottom: measuring.$m-18;
+  }
+
+  &__info {
+    @extend %text-sm;
+  }
+
+  &__line {
+    &:not(:last-child) {
+      margin-bottom: measuring.$m-10;
+    }
+  }
+
+  &__legend {
+    color: color.$tc-dim;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: flex-end;
+  }
+}
